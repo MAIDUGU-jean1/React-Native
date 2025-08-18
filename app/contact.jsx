@@ -1,26 +1,20 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Logo from '../assets/icon.png'
-import {Link} from 'expo-router'
+import { Link } from 'expo-router'
 
-const Home = () => {
+const Contact = () => {
   return (
     <View style={styles.container}>
-
-        <Image source={Logo} style={{ width: 100, height: 100 }} />
-
-      <Text style={styles.title}>The Number 1</Text>
-      <Text style={styles.subtitle}>Reading List App</Text>
-    <Link href="/about" style={styles.link}>Go to About Page</Link>
-    <Link href="/contact" style={styles.link}>Go to Contact Page</Link>
+      <Text style={styles.title}>Contact Page</Text>
+      <Link href="/" style={styles.link}>Back to home page</Link>
     </View>
   )
 }
 
-export default Home
+export default Contact
 
 const styles = StyleSheet.create({
-    title:{
+    title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 5,
@@ -32,8 +26,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#f0f0f0',
     },
-    
-      link: {
+    link: {
         marginTop: 20,
         fontSize: 16,
         color: '#007BFF',
@@ -41,5 +34,4 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#007BFF',
     },
-
 })
