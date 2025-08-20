@@ -1,20 +1,39 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, useColorScheme } from 'react-native'
 import React from 'react'
 import Logo from '../assets/icon.png'
 import {Link} from 'expo-router'
+import { Colors } from '../constants/Colors'
+// Theme provider  
+import ThemeView from '../components/ThemeView'
+import ThemedLogo from '../components/ThemedLogo'
+import Spacer from '../components/Spacer'
+import ThemeText from '../components/ThemeText'
+
 
 const Home = () => {
+  const colorScheme = useColorScheme();
+  const theme = Colors[colorScheme] ?? Colors.light;
+
   return (
-    <View style={styles.container}>
+    <ThemeView style={[styles.container, { backgroundColor: theme.background }]}>
+      <ThemedLogo style={styles.logo} />
+      <Spacer height={20} />
 
-        <Image source={Logo} style={{ width: 100, height: 100 }} />
+      <ThemeText style={styles.title} title={true}>
+        The Number 1
+      </ThemeText>
 
-      <Text style={styles.title}>The Number 1</Text>
-      <Text style={styles.subtitle}>Reading List App</Text>
-    <Link href="/about" style={styles.link}>Go to About Page</Link>
-    <Link href="/contact" style={styles.link}>Go to Contact Page</Link>
-    </View>
-  )
+      <Spacer height={10} />
+      <ThemeText style={styles.subtitle}>Reading List App</ThemeText>
+      <Spacer height={10} />
+      <Link href="/about" style={styles.link}>
+        <ThemeText> Go to About Page </ThemeText>
+      </Link>
+      <Link href="/contact" style={styles.link}>
+        <ThemeText> Go to Contact Page </ThemeText>
+      </Link>
+    </ThemeView>
+  );
 }
 
 export default Home
@@ -41,5 +60,9 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#007BFF',
     },
+    logo: {
+      width: 100,
+      height: 100,
+    }
 
 })
