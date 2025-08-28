@@ -7,7 +7,6 @@ import { StatusBar } from 'expo-status-bar'
 const RootLayout = () => {
   const colorScheme = useColorScheme()
   const theme = Colors[colorScheme] ?? Colors.light
-  // console.log(colorScheme)
   return (
    <>
     <StatusBar value="auto"/>
