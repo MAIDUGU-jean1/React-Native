@@ -9,10 +9,12 @@ const ThemeView = ({style, ...props}) => {
 
   return (
     <View
-    style={[{backgroundColor: theme.background}, style]}
-    {...props}
-    />
- )
+      style={[{backgroundColor: theme.background}, style]}
+      {...props}
+    >
+      {props.children}
+    </View>
+  )
 }
 
 export default ThemeView

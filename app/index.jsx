@@ -26,11 +26,11 @@ const Home = () => {
       <Spacer height={10} />
       <ThemeText style={styles.subtitle}>Reading List App</ThemeText>
       <Spacer height={10} />
-      <Link href="/about" style={styles.link}>
-        <ThemeText> Go to About Page </ThemeText>
+      <Link href="/login" style={styles.link}>
+        <ThemeText> Login Page</ThemeText>
       </Link>
-      <Link href="/contact" style={styles.link}>
-        <ThemeText> Go to Contact Page </ThemeText>
+      <Link href="/register" style={styles.link}>
+        <ThemeText> Register Page </ThemeText>
       </Link>
     </ThemeView>
   );
