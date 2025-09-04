@@ -1,6 +1,6 @@
 import {View } from 'react-native'
 
-const Spacer = ({height = "100%", width = 16, ...props}) => {
+const Spacer = ({width = "100%", height = 40, ...props}) => {
     return (
         <View style={{ height, width }} {...props} />
     ); 

@@ -15,9 +15,9 @@ const RootLayout = () => {
         headerTintColor: theme.iconColor,
      }}>
         <Stack.Screen name='index' options={{ title: 'Home' }}/>
-        <Stack.Screen name='about' options={{ title: 'About' }}/>
-        <Stack.Screen name='contact' options={{ title: 'Contact' }}/> {/* headerShown: false . Proper to hide the header by default*/}
         <Stack.Screen name='(auth)' options={{ headerShown: false }}/>
+        <Stack.Screen name='(dashboard)' options={{ headerShown: false }}/>
+
     </Stack>
    </>
   )

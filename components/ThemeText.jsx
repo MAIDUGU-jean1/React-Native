@@ -10,8 +10,8 @@ const ThemeText = ({style, title=false ,...props}) => {
 
   return (
     <Text
-    style={[{color: textColor}, style]}
-    {...props}
+      style={[{color: textColor}, style]}
+      {...props}
     />
  )
 }
