@@ -1,12 +1,14 @@
 import { Tabs } from 'expo-router';
 import { useColorScheme } from 'react-native';
 import { Colors } from '../../constants/Colors';
+import {Ionicons} from '@expo/vector-icons'
 
 const DashboardLayout = () => {
 
     const ColorScheme = useColorScheme();
     const theme = Colors[ColorScheme] ?? Colors.light;
     return (
+        <>
         <Tabs
             screenOptions={{headerShown: false, tabBarStyle: {
                 backgroundColor: theme.navBackground,paddingTop:10, height:90 }, 
@@ -14,11 +16,39 @@ const DashboardLayout = () => {
                 tabBarInactiveTintColor: theme.iconColor,
             }}
         >
-            <Tabs.Screen name="books" options={{ title: 'Books' }} />
-            <Tabs.Screen name="profile" options={{ title: 'Profile' }} />
-            <Tabs.Screen name="create" options={{ title: 'Create' }} />
+            <Tabs.Screen 
+                name="profile" 
+                options={{ title: 'Profile',tabBarIcon: ({focused}) => (
+                    <Ionicons
+                        size={24}
+                        name={focused ? 'person' : 'person-add-outline'}
+                        color={focused ? theme.iconColorFocused : theme.iconColor}
+                    />
+                ) }} 
+                
+            />
+
+            <Tabs.Screen 
+                name="books" 
+                options={{ title: 'Books', tabBarIcon: ({focused}) =>(
+                    <Ionicons
+                        size={24}
+                        name={focused ? 'book' : 'book-outline'}
+                        color={focused ? theme.iconColorFocused : theme.iconColor}
+                    />
+                ) }} />
+            <Tabs.Screen 
+                name="create" 
+                options={{ title: 'Create', tabBarIcon: ({focused}) => (
+                    <Ionicons
+                        size={24}
+                        name={focused ? 'create' : 'create-outline'}
+                        color={focused ? theme.iconColorFocused : theme.iconColor}
+                    />
+                ) }} />
 
         </Tabs>
+        </>
     )
 };
 
